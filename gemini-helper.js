@@ -1,6 +1,7 @@
 /**
  * AI Search Compare - Gemini Helper
  * Auto-fills the Gemini input box with query from URL parameter and auto-submits
+ * Based on: gemini-url-prompt extension (gcooahlbfkojbacclfbofkcknbiopjan)
  */
 
 (function() {
