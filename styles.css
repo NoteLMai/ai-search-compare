@@ -1,0 +1,164 @@
+/* AI Search Compare - Compact Inline Button Styles */
+
+/* ============================================
+   INLINE CONTAINER (between search and tabs)
+   ============================================ */
+.ai-switcher-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  animation: fadeIn 0.2s ease-out;
+  background: transparent;
+  border: none;
+  transition: opacity 0.15s ease;
+}
+
+.ai-switcher-label {
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 11px;
+  font-weight: 500;
+  margin-right: 2px;
+}
+
+/* ============================================
+   COMPACT BUTTONS
+   ============================================ */
+.ai-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 8px;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  outline: none;
+  white-space: nowrap;
+}
+
+.ai-switcher-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.ai-switcher-btn:focus-visible {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.ai-switcher-btn.active {
+  background: #e8f0fe;
+  color: #1967d2;
+}
+
+.ai-switcher-btn.active:hover {
+  background: #d2e3fc;
+}
+
+.btn-icon {
+  font-size: 12px;
+  line-height: 1;
+}
+
+.btn-name {
+  font-size: 11px;
+}
+
+/* ============================================
+   ENGINE SELECTION INDICATOR
+   ============================================ */
+.ai-switcher-indicator {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  padding: 8px 16px;
+  background: rgba(32, 33, 36, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 999999;
+  pointer-events: none;
+}
+
+.ai-switcher-indicator.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   DARK THEME SUPPORT
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+  .ai-switcher-label {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .ai-switcher-btn {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .ai-switcher-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.95);
+  }
+  
+  .ai-switcher-btn.active {
+    background: rgba(138, 180, 248, 0.15);
+    color: #8ab4f8;
+  }
+  
+  .ai-switcher-btn.active:hover {
+    background: rgba(138, 180, 248, 0.25);
+  }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media (max-width: 768px) {
+  .ai-switcher-btn {
+    padding: 2px 6px;
+    font-size: 11px;
+  }
+  
+  .btn-icon {
+    font-size: 11px;
+  }
+  
+  /* Hide text on small screens, show only icons */
+  .btn-name {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-switcher-label {
+    display: none;
+  }
+}

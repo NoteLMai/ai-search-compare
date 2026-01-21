@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "AI Search Compare",
+  "short_name": "AI Compare",
+  "version": "1.0.0",
+  "description": "Quickly switch between AI search engines (Google, Perplexity, ChatGPT, Claude, Gemini) with a tab bar above the search box.",
+  "permissions": ["storage", "activeTab", "windows", "system.display", "tabs"],
+  "host_permissions": [
+    "https://*.google.com/*",
+    "https://*.perplexity.ai/*",
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://gemini.google.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.google.com/search*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["gemini-helper.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["claude-helper.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "AI Search Compare (Click to toggle)",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
